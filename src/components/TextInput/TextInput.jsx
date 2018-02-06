@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import React from 'react';
 
 const TextInput = ({
   labelText,
@@ -14,50 +14,66 @@ const TextInput = ({
   onClick,
   ...otherProps
 }) => {
-
   const textInputProps = {
     id,
     placeholder,
     type,
-    onChange: event => {
-      if (!otherProps.disabled)
+    onChange: (event) => {
+      if (!otherProps.disabled) {
         onChange(event);
-      },
+      }
+    },
 
-    onClick: event => {
-      if (!otherProps.disabled)
+    onClick: (event) => {
+      if (!otherProps.disabled) {
         onClick(event);
       }
-    }
+    },
+  };
 
   const errorId = `${id}-error-msg`;
   const textInputClasses = `form-control ${inputClass}`;
   const labelClasses = `label ${labelClass}`;
 
   const label = labelText
-    ? (<label htmlFor={id} className={labelClass}>
-      {labelText}
-    </label>)
+    ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>)
     : null;
 
   const input = invalid
-    ? (<input {...otherProps} {...textInputProps} className={textInputClasses} data-invalid="data-invalid" aria-invalid="aria-invalid" aria-describedby={errorId}/>)
-    : (<input {...otherProps} {...textInputProps} className={textInputClasses}/>);
+    ? (
+      <input
+        {...otherProps}
+        {...textInputProps}
+        className={textInputClasses}
+        data-invalid="data-invalid"
+        aria-invalid="true"
+        aria-describedby={errorId}
+      />)
+    : (
+      <input {...otherProps} {...textInputProps} className={textInputClasses} />
+    );
 
   const error = invalid
-    ? (<div id={errorId} className="alert alert-danger" role="alert">
-      <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span className="sr-only">Error:</span>
-      {errorMsg}
-    </div>)
+    ? (
+      <div id={errorId} className="alert alert-danger" role="alert">
+        <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true" />
+        <span className="sr-only">
+          Error:
+        </span>
+        {errorMsg}
+      </div>)
     : null;
 
-  return (<div className="form-group">
-    {label}
-    {input}
-    {error}
-  </div>);
-}
+  return (
+    <div className="form-group">
+      {label}
+      {input}
+      {error}
+    </div>);
+};
 
 TextInput.propTypes = {
   // input id, also used for the errorId and the htmlFor for the label
@@ -65,9 +81,6 @@ TextInput.propTypes = {
 
   // className for the input
   inputClass: PropTypes.string,
-
-  // default value type of the input
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   // the input can be disabled
   disabled: PropTypes.bool,
@@ -81,7 +94,7 @@ TextInput.propTypes = {
   // placeholder for the input
   placeholder: PropTypes.string,
 
-  //input type
+  // input type
   type: PropTypes.string,
 
   // value of the input can be an string or a number
@@ -97,7 +110,7 @@ TextInput.propTypes = {
   invalid: PropTypes.bool,
 
   // error text used for the error element
-  errorMsg: PropTypes.string
+  errorMsg: PropTypes.string,
 };
 
 TextInput.defaultProps = {
@@ -106,8 +119,12 @@ TextInput.defaultProps = {
   invalid: false,
   errorMsg: 'error-msg',
   inputClass: '',
+  labelClass: '',
+  labelText: '',
+  placeholder: '',
+  value: '',
   onChange: () => {},
-  onClick: () => {}
-}
+  onClick: () => {},
+};
 
 export default TextInput;
