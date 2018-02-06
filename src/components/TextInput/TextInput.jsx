@@ -19,6 +19,7 @@ const TextInput = ({
     id,
     placeholder,
     type,
+    disabled,
     onChange: (event) => {
       if (!disabled) {
         onChange(event);
@@ -98,8 +99,8 @@ TextInput.propTypes = {
   // input type
   type: PropTypes.string,
 
-  // value of the input can be an string or a number
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  // defaultValue of the input can be an string or a number
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   // func that get executed the value of the input change
   onChange: PropTypes.func,
@@ -123,7 +124,7 @@ TextInput.defaultProps = {
   labelClass: '',
   labelText: '',
   placeholder: '',
-  value: '',
+  defaultValue: '',
   onChange: () => {},
   onClick: () => {},
 };
