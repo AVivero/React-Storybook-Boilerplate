@@ -9,6 +9,7 @@ const TextInput = ({
   placeholder,
   type,
   invalid,
+  disabled,
   errorMsg,
   onChange,
   onClick,
@@ -19,13 +20,13 @@ const TextInput = ({
     placeholder,
     type,
     onChange: (event) => {
-      if (!otherProps.disabled) {
+      if (!disabled) {
         onChange(event);
       }
     },
 
     onClick: (event) => {
-      if (!otherProps.disabled) {
+      if (!disabled) {
         onClick(event);
       }
     },
