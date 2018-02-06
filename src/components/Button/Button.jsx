@@ -22,9 +22,7 @@ const Button = ({
       }
     },
   };
-
-const buttonClasses = `btn ${className}`;
-
+  const buttonClasses = `btn ${className}`;
   return (
     <div className="btn-group">
       <button
