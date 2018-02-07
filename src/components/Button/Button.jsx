@@ -23,15 +23,13 @@ const Button = ({
   };
   const buttonClasses = `btn ${className}`;
   return (
-    <div className="btn-group">
-      <button
-        className={buttonClasses}
-        {...buttonProps}
-        {...otherProps}
-      >
-        {children}
-      </button>
-    </div>
+    <button
+      className={buttonClasses}
+      {...buttonProps}
+      {...otherProps}
+    >
+      {children}
+    </button>
   );
 };
 

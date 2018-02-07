@@ -22,7 +22,6 @@ Renders a `<div>` element with an `<input type="radio">` and his associated `<la
 ## Props the component receives
 
 
-
 - `radioButtonClassName: PropTypes.string`  Class name that is going to be applied to the `<input>` element
 
 
@@ -35,10 +34,10 @@ Renders a `<div>` element with an `<input type="radio">` and his associated `<la
 - `disabled: PropTypes.bool`  True if the `<input>` element must be disabled
 
 
-- `id: PropTypes.string.isRequired`  Id of the `<input>` element
+- `id: PropTypes.string.isRequired` (Required)  Id of the `<input>` element
 
 
-- `labelText: PropTypes.string.isRequired`  This prop will be used as the <label> content
+- `labelText: PropTypes.string.isRequired` (Required)  This prop will be used as the <label> content
 
 
 - `name: PropTypes.string`  Name of the `<input>` element
@@ -47,13 +46,12 @@ Renders a `<div>` element with an `<input type="radio">` and his associated `<la
 - `onChange: PropTypes.func`  Callback function to be call when the `<input>` element change
 
 
-- `value: PropTypes.string.isRequired`  Value of the `<input>` element
+- `value: PropTypes.string.isRequired` (Required)  Value of the `<input>` element
 
 It may receive more props and these are going to applied to the `<input>` element
 
 
-
-## State the component holds (if any)
+## State the component holds
 Stateless component
 
 ## What the component does when the user interacts with it
