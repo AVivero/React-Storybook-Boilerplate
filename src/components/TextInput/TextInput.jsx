@@ -10,7 +10,7 @@ const TextInput = ({
   type,
   invalid,
   disabled,
-  errorMsg,
+  helpMessage,
   defaultValue,
   onChange,
   onClick,
@@ -35,9 +35,9 @@ const TextInput = ({
     },
   };
 
-  const errorId = `${id}-error-msg`;
+  const helpBlockId = `${id}-help-msg`;
   const textInputClasses = `form-control ${inputClass}`;
-  const labelClasses = `label ${labelClass}`;
+  const labelClasses = `control-label ${labelClass}`;
 
   const label = labelText
     ? (
@@ -51,32 +51,37 @@ const TextInput = ({
       <input
         {...otherProps}
         {...textInputProps}
-        className={`${textInputClasses} error`}
+        className={textInputClasses}
         data-invalid="data-invalid"
         aria-invalid="true"
-        aria-describedby={errorId}
+        aria-describedby={helpBlockId}
       />)
     : (
       <input {...otherProps} {...textInputProps} className={textInputClasses} />
     );
 
-  const error = invalid && errorMsg
+  const helpMessageBlock = invalid && helpMessage
     ? (
-      <div id={errorId} className="alert alert-danger" role="alert">
-        <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true" />
-        <span className="sr-only">
-          Error:
-        </span>
-        {errorMsg}
-      </div>)
+      <span id={helpBlockId} className="help-block">
+        {helpMessage}
+      </span>)
     : null;
 
   return (
-    <div className="form-group">
-      {label}
-      {input}
-      {error}
-    </div>);
+    (invalid && helpMessage)
+      ? (
+        <div className="form-group has-error">
+          {label}
+          {input}
+          {helpMessageBlock}
+        </div>)
+      : (
+        <div className="form-group">
+          {label}
+          {input}
+          {helpMessageBlock}
+        </div>)
+  );
 };
 
 TextInput.propTypes = {
@@ -113,15 +118,15 @@ TextInput.propTypes = {
   // the input can be invalid, that will define how to render the input
   invalid: PropTypes.bool,
 
-  // error text used for the error element
-  errorMsg: PropTypes.string,
+  // help text used for the help block
+  helpMessage: PropTypes.string,
 };
 
 TextInput.defaultProps = {
   disabled: false,
   type: 'text',
   invalid: false,
-  errorMsg: 'error-msg',
+  helpMessage: 'incorrect value',
   inputClass: '',
   labelClass: '',
   labelText: '',

@@ -81,7 +81,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
   const placeholder = text('Placeholder', 'placeholder...');
   const className = text('className', '');
   const invalid = boolean('Invalid', true);
-  const errorMsg = text('Error Message', 'Whoops something\'s wrong!');
+  const helpMessage = text('Error Message', 'Whoops something\'s wrong!');
   const labelText = text('LabelText', 'Label');
   const disabled = boolean('Disabled', false);
   const type = text('Type', 'text');
@@ -93,7 +93,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
         placeholder={placeholder}
         onChange={() => {}}
         invalid={invalid}
-        errorMsg={errorMsg}
+        helpMessage={helpMessage}
         labelText={labelText}
         disabled={disabled}
         className={className}
@@ -108,7 +108,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input With
   const placeholder = text('Placeholder', 'password...');
   const className = text('className', 'password');
   const invalid = boolean('Invalid', false);
-  const errorMsg = text('Error Message', 'Whoops something\'s wrong!');
+  const helpMessage = text('Error Message', 'Whoops something\'s wrong!');
   const labelText = text('LabelText', 'Password');
   const disabled = boolean('Disabled', false);
   const type = text('Type', 'password');
@@ -120,7 +120,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input With
         placeholder={placeholder}
         onChange={() => {}}
         invalid={invalid}
-        errorMsg={errorMsg}
+        helpMessage={helpMessage}
         labelText={labelText}
         disabled={disabled}
         className={className}

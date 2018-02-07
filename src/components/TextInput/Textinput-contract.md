@@ -29,14 +29,10 @@ Renders a `<input>` element, but the element can also have a `<label>` component
 <!-- If the invalid prop is not passed to the component the <input will be rendered like this>-->
 <input {...otherProps} {...textInputProps} className={textInputClasses} />
 
-<!-- If the invalid and errorMsg props are passed to the component, the <div> element showing up an alert will be included -->
-<div id={errorId} className="alert alert-danger" role="alert">
-      <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true" />
-      <span className="sr-only">
-        Error:
-      </span>
-      {errorMsg}
-</div>
+<!-- If the invalid and helpMessage props are passed to the component, the <span> element showing up an alert will be included -->
+<span id={helpBlockId} className="help-block">
+  {helpMessage}
+</span>)
 
 <!-- The render method will look like this, if label and error  -->
 <div className="form-group">
@@ -46,8 +42,8 @@ Renders a `<input>` element, but the element can also have a `<label>` component
   <!-- if invalid is passed to the component the <input> element will have the attributes data-invalid, aria-invalid and aria-describedby -->
   {input}
 
-  <!-- if invalid is not passed to the component {error} will be null, so no error msg will be rendered -->
-  {error}
+  <!-- if invalid is not passed to the component {helpMessageBlock} will be null, so no help msg will be rendered -->
+  {helpMessageBlock}
 </div>);
 ```
 
@@ -75,7 +71,7 @@ Renders a `<input>` element, but the element can also have a `<label>` component
 
 - `invalid: PropTypes.bool` (This prop define how the component render) Prop used to define if the value of the `input` element is not valid, if `invalid` is passed the attributes data-invalid, aria-invalid and aria-describedby are included in the `<input>` and the class `invalid` is included too, if both `invalid` and `errorMsg` are passed, the `<div>` element that show up the error msg is rendered too.
 
-- `errorMsg: PropTypes.string`  Prop used as the content of the `<div>` element that show up the error msg (if `invalid` is passed too)
+- `helpMessage: PropTypes.string`  Prop used as the content of the `<span>` element that show up the help msg block (if `invalid` is passed too)
 
 It may receive more props and these are going to applied to the `<input>` element
 
