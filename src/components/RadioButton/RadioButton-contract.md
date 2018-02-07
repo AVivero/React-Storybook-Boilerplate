@@ -1,6 +1,5 @@
 
 # RadioButton Documentation/Contract
-***
 
 ## Name
 RadioButton
