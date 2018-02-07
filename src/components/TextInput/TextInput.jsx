@@ -51,7 +51,7 @@ const TextInput = ({
       <input
         {...otherProps}
         {...textInputProps}
-        className={`${textInputClasses} invalid`}
+        className={`${textInputClasses} error`}
         data-invalid="data-invalid"
         aria-invalid="true"
         aria-describedby={errorId}

@@ -81,10 +81,37 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
   const placeholder = text('Placeholder', 'placeholder...');
   const className = text('className', '');
   const invalid = boolean('Invalid', true);
-  const errorMsg = text('Error Message', 'Incorrect Value');
+  const errorMsg = text('Error Message', 'Whoops something\'s wrong!');
   const labelText = text('LabelText', 'Label');
   const disabled = boolean('Disabled', false);
   const type = text('Type', 'text');
+
+  return (
+    <div>
+      <TextInput
+        id={id}
+        placeholder={placeholder}
+        onChange={() => {}}
+        invalid={invalid}
+        errorMsg={errorMsg}
+        labelText={labelText}
+        disabled={disabled}
+        className={className}
+        type={type}
+      />
+    </div>);
+});
+
+// Text Input With Type Password
+storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input With Type Password', () => {
+  const id = text('Id', 'password');
+  const placeholder = text('Placeholder', 'password...');
+  const className = text('className', 'password');
+  const invalid = boolean('Invalid', false);
+  const errorMsg = text('Error Message', 'Whoops something\'s wrong!');
+  const labelText = text('LabelText', 'Password');
+  const disabled = boolean('Disabled', false);
+  const type = text('Type', 'password');
 
   return (
     <div>
