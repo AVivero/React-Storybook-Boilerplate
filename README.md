@@ -1,6 +1,8 @@
+<!-- THIS IS JUST A TEMPLATE, IT NEEDS TO BE DEFINED FOR THIS PROJECT -->
+
 # em-cmp-quartzs
 
-Basic React Components like: inputs, autocomplete, datepicker, etc.
+This library provides multiple types of basic html elements (button, inputs, radio-button, date-picker, spin-button... etc) implemented with React.
 
 ## Getting Started
 
@@ -68,7 +70,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Billie Thompson** - *Initial work* -
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

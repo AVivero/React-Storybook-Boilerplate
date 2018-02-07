@@ -11,6 +11,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input', ()
   const className = text('className', '');
   const invalid = boolean('Invalid', false);
   const disabled = boolean('Disabled', false);
+  const type = text('Type', 'text');
 
   return (
     <div>
@@ -21,6 +22,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input', ()
         invalid={invalid}
         disabled={disabled}
         className={className}
+        type={type}
       />
     </div>);
 });
@@ -32,6 +34,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Disabled Text I
   const className = text('className', '');
   const invalid = boolean('Invalid', false);
   const disabled = boolean('Disabled', true);
+  const type = text('Type', 'text');
 
   return (
     <div>
@@ -42,6 +45,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Disabled Text I
         invalid={invalid}
         disabled={disabled}
         className={className}
+        type={type}
       />
     </div>);
 });
@@ -54,6 +58,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ L
   const invalid = boolean('Invalid', false);
   const labelText = text('LabelText', 'Label');
   const disabled = boolean('Disabled', false);
+  const type = text('Type', 'text');
 
   return (
     <div>
@@ -65,6 +70,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ L
         labelText={labelText}
         disabled={disabled}
         className={className}
+        type={type}
       />
     </div>);
 });
@@ -78,6 +84,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
   const errorMsg = text('Error Message', 'Incorrect Value');
   const labelText = text('LabelText', 'Label');
   const disabled = boolean('Disabled', false);
+  const type = text('Type', 'text');
 
   return (
     <div>
@@ -90,6 +97,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
         labelText={labelText}
         disabled={disabled}
         className={className}
+        type={type}
       />
     </div>);
 });

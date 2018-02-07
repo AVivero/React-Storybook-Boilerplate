@@ -11,6 +11,7 @@ const TextInput = ({
   invalid,
   disabled,
   errorMsg,
+  defaultValue,
   onChange,
   onClick,
   ...otherProps
@@ -20,6 +21,7 @@ const TextInput = ({
     placeholder,
     type,
     disabled,
+    defaultValue,
     onChange: (event) => {
       if (!disabled) {
         onChange(event);
@@ -49,7 +51,7 @@ const TextInput = ({
       <input
         {...otherProps}
         {...textInputProps}
-        className={textInputClasses}
+        className={`${textInputClasses} invalid`}
         data-invalid="data-invalid"
         aria-invalid="true"
         aria-describedby={errorId}
@@ -58,7 +60,7 @@ const TextInput = ({
       <input {...otherProps} {...textInputProps} className={textInputClasses} />
     );
 
-  const error = invalid
+  const error = invalid && errorMsg
     ? (
       <div id={errorId} className="alert alert-danger" role="alert">
         <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true" />
@@ -97,7 +99,7 @@ TextInput.propTypes = {
   placeholder: PropTypes.string,
 
   // input type
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'password']),
 
   // defaultValue of the input can be an string or a number
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
