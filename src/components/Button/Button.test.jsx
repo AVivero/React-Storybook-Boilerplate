@@ -55,23 +55,24 @@ describe('Button', () => {
       expect(wrapper.props().type).toEqual('submit');
     });
   });
-});
 
-describe('Button', () => {
-  describe('Renders other props as expected', () => {
+
+  describe('Button', () => {
+    describe('Renders other props as expected', () => {
     // eslint-disable-next-line function-paren-newline
-    const wrapper = shallow(
-      <Button name="buttonName" testProp='testPropValue'>
-        <div className="child">child-1</div>
-        <div className="child">child-2</div>
-      </Button>);
+      const wrapper = shallow(
+        <Button name="buttonName" testProp="testPropValue">
+          <div className="child">child-1</div>
+          <div className="child">child-2</div>
+        </Button>);
 
-    it('Should have name if one is passed via props', () => {
-      expect(wrapper.props().name).toEqual('buttonName');
+      it('Should have name if one is passed via props', () => {
+        expect(wrapper.props().name).toEqual('buttonName');
+      });
+
+      it('Should have testProp if one is passed via props', () => {
+        expect(wrapper.props().testProp).toEqual('testPropValue');
+      });
     });
-
-    it('Should have testProp if one is passed via props', () => {
-      expect(wrapper.props().testProp).toEqual('testPropValue');
-    });
-
   });
+});
