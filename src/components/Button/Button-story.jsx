@@ -23,6 +23,7 @@ storiesOf('Buttons', module).addDecorator(withKnobs).addWithInfo('Button', () =>
         type={type}
         tabIndex={tabIndex}
         onClick={onClick}
+        testProp="testPropValue"
       >
         Simple Button
       </Button>
