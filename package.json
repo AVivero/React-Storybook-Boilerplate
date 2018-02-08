@@ -38,7 +38,12 @@
     "storybook-addon-props": "3.0.2",
     "storybook-addon-scissors": "3.0.1",
     "style-loader": "0.19.0",
-    "webpack": "3.8.1"
+    "webpack": "3.8.1","chai": "^3.5.0",
+    "enzyme": "^2.0.0",
+    "jsdom": "^8.1.0",
+    "mocha": "^3.0.2",
+    "react-addons-test-utils": "^0.14.7",
+    "sinon": "^1.17.3",
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.2.15",
