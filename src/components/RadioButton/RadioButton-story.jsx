@@ -9,31 +9,33 @@ const onChange = (event) => {
 };
 
 // Simple Radio Button
-storiesOf('RadioButton', module).addDecorator(withKnobs).addWithInfo('Radio Button', () => {
-  const radioButtonClassName = text('radioButtonClassName', '');
-  const labelClassName = text('labelClassname', '');
-  const disabled = boolean('Disabled', false);
-  const defaultChecked = boolean('Default Checked', false);
-  const id = text('Id', 'radio-button');
-  const labelText = text('Label Text', 'Label Text Radio Button');
-  const name = text('Name', 'radio button name');
-  const value = text('Value', 'value');
+storiesOf('RadioButton', module)
+  .addDecorator(withKnobs)
+  .addWithInfo('Radio Button', () => {
+    const radioButtonClassName = text('radioButtonClassName', '');
+    const labelClassName = text('labelClassname', '');
+    const disabled = boolean('Disabled', false);
+    const defaultChecked = boolean('Default Checked', false);
+    const id = text('Id', 'radio-button');
+    const labelText = text('Label Text', 'Label Text Radio Button');
+    const name = text('Name', 'radio button name');
+    const value = text('Value', 'value');
 
-  return (
-    <div>
-      <RadioButton
-        radioButtonClassName={radioButtonClassName}
-        labelClassName={labelClassName}
-        disabled={disabled}
-        defaultChecked={defaultChecked}
-        id={id}
-        labelText={labelText}
-        name={name}
-        value={value}
-        onChange={onChange}
-      />
-    </div>);
-});
+    return (
+      <div>
+        <RadioButton
+          radioButtonClassName={radioButtonClassName}
+          labelClassName={labelClassName}
+          disabled={disabled}
+          defaultChecked={defaultChecked}
+          id={id}
+          labelText={labelText}
+          name={name}
+          value={value}
+          onChange={onChange}
+        />
+      </div>);
+  });
 
 // Simple Radio Button Disabled
 storiesOf('RadioButton', module).addDecorator(withKnobs).addWithInfo('Radio Button Disabled', () => {
