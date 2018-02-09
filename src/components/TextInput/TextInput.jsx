@@ -41,6 +41,7 @@ const TextInput = ({
 
   const label = labelText
     ? (
+      // eslint-disable-next-line jsx-a11y/label-has-for
       <label htmlFor={id} className={labelClasses}>
         {labelText}
       </label>)
@@ -68,7 +69,7 @@ const TextInput = ({
     : null;
 
   return (
-    (invalid && helpMessage)
+    (invalid)
       ? (
         <div className="form-group has-error">
           {label}
@@ -79,7 +80,6 @@ const TextInput = ({
         <div className="form-group">
           {label}
           {input}
-          {helpMessageBlock}
         </div>)
   );
 };
@@ -126,7 +126,7 @@ TextInput.defaultProps = {
   disabled: false,
   type: 'text',
   invalid: false,
-  helpMessage: 'incorrect value',
+  helpMessage: '',
   inputClass: '',
   labelClass: '',
   labelText: '',

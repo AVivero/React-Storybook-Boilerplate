@@ -6,21 +6,27 @@ describe('Button', () => {
   describe('Renders common props as expected', () => {
     // eslint-disable-next-line function-paren-newline
     const wrapper = shallow(
-      <Button tabIndex={0} className="buttonClass" type="reset" disabled="true">
-        <div className="child">child-1</div>
-        <div className="child">child-2</div>
+      <Button
+        id="buttonId"
+        tabIndex={0}
+        className="buttonClass"
+        type="reset"
+        disabled="true"
+        onClick={{}}
+      >
+        <span className="child">Click Me</span>
       </Button>);
 
     it('Renders children as expected', () => {
-      expect(wrapper.find('.child').length).toBe(2);
+      expect(wrapper.find('.child').length).toBe(1);
     });
 
     it('It should be disabled as expected', () => {
-      expect(wrapper.props().disabled.toEqual(true));
+      expect(wrapper.props().disabled).toEqual(true);
     });
 
     it('It should be of type reset', () => {
-      expect(wrapper.props().type.toEqual('button'));
+      expect(wrapper.props().type).toEqual('button');
     });
 
     it('Should set tabIndex if one is passed via props', () => {
@@ -35,9 +41,11 @@ describe('Button', () => {
   describe('Renders <button> with default props as expected', () => {
     // eslint-disable-next-line function-paren-newline
     const wrapper = shallow(
-      <Button>
-        <div className="child">child-1</div>
-        <div className="child">child-2</div>
+      <Button
+        id="buttonId"
+        onClick={() => {}}
+      >
+        <span className="child">Click Me</span>
       </Button>);
 
     it('Should set disabled to false by default', () => {
@@ -56,23 +64,24 @@ describe('Button', () => {
     });
   });
 
-
-  describe('Button', () => {
-    describe('Renders other props as expected', () => {
+  describe('Renders other props as expected', () => {
     // eslint-disable-next-line function-paren-newline
-      const wrapper = shallow(
-        <Button name="buttonName" testProp="testPropValue">
-          <div className="child">child-1</div>
-          <div className="child">child-2</div>
-        </Button>);
+    const wrapper = shallow(
+      <Button
+        id="buttonId"
+        onClick={() => {}}
+        otherProp1="otherProp1Value"
+        otherProp2="otherProp2Value"
+      >
+        <span className="child">Click Me</span>
+      </Button>);
 
-      it('Should have name if one is passed via props', () => {
-        expect(wrapper.props().name).toEqual('buttonName');
-      });
+    it('Should have name if one is passed via props', () => {
+      expect(wrapper.props().otherProp1).toEqual('otherProp1');
+    });
 
-      it('Should have testProp if one is passed via props', () => {
-        expect(wrapper.props().testProp).toEqual('testPropValue');
-      });
+    it('Should have testProp if one is passed via props', () => {
+      expect(wrapper.props().otherProp2).toEqual('otherProp2');
     });
   });
 });

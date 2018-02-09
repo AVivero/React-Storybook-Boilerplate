@@ -2,57 +2,93 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import RadioButton from './RadioButton';
 
-describe('Button', () => {
+describe('RadioButton', () => {
   describe('Renders common props as expected', () => {
     // eslint-disable-next-line function-paren-newline
     const wrapper = shallow(
-      <Button tabIndex={0} className="buttonClass" type="reset" disabled="true">
-        <div className="child">child-1</div>
-        <div className="child">child-2</div>
-      </Button>);
+      <RadioButton
+        defaultChecked
+        radioButtonClassName="radioButtonClassName"
+        disabled
+        id="radioButtonId"
+        name="radioButtonName"
+        labelText="Label Text"
+        value="radioButtonValue"
+      />);
 
-    it('Renders children as expected', () => {
-      expect(wrapper.find('.child').length).toBe(2);
+    it('Render the <label> and an <input>', () => {
+      expect(wrapper.find('label').length).toBe(1);
+      expect(wrapper.find('input').length).toBe(1);
     });
 
-    it('It should be disabled as expected', () => {
-      expect(wrapper.props().disabled.toEqual(true));
+    it('The <input> should be defaultChecked if passed as a prop', () => {
+      expect(wrapper.find('input').props().defaultChecked).toEqual(true);
     });
 
-    it('It should be of type reset', () => {
-      expect(wrapper.props().type.toEqual('button'));
+    it('<input> should have className equal to prop if passed', () => {
+      expect(wrapper.find('input').hasClass('radioButtonClassName')).toBe(true);
     });
 
-    it('Should set tabIndex if one is passed via props', () => {
-      expect(wrapper.props().tabIndex).toEqual(0);
+    it('<input> should be disabled if passed as prop', () => {
+      expect(wrapper.find('input').props().disabled).toBe(true);
     });
 
-    it('Should add extra classes via className', () => {
-      expect(wrapper.hasClass('buttonClass')).toBe(true);
+    it('<input> should have id equal to prop if passed', () => {
+      expect(wrapper.find('input').props().id).toEqual('radioButtonId');
+    });
+
+    it('<input> should have name equal to prop if passed', () => {
+      expect(wrapper.find('input').props().name).toEqual('radioButtonName');
+    });
+
+    it('<input> should have value equal to prop', () => {
+      expect(wrapper.find('input').props().value).toEqual('radioButtonValue');
+    });
+
+    it('<label> should have content equal to labelText prop', () => {
+      expect(wrapper.find('label').props().text).toEqual('Label Text');
     });
   });
 
-  describe('Renders <button> with default props as expected', () => {
+
+  // defaultChecked: false,
+  // disabled: false
+
+  describe('Renders <input> with default props as expected', () => {
     // eslint-disable-next-line function-paren-newline
     const wrapper = shallow(
-      <Button>
-        <div className="child">child-1</div>
-        <div className="child">child-2</div>
-      </Button>);
+      <RadioButton
+        id="radioButtonId"
+        labelText="Label Text"
+        value="radioButtonValue"
+      />);
 
     it('Should set disabled to false by default', () => {
       expect(wrapper.props().disabled).toBe(false);
     });
 
-    it('Should set type to button by default', () => {
-      expect(wrapper.props().type).toEqual('button');
+    it('Should set defaultChecked to false by default', () => {
+      expect(wrapper.props().defaultChecked).toBe(false);
+    });
+  });
+
+  describe('Renders other props as expected', () => {
+    // eslint-disable-next-line function-paren-newline
+    const wrapper = shallow(
+      <RadioButton
+        id="radioButtonId"
+        labelText="Label Text"
+        value="radioButtonValue"
+        otherProp1="otherProp1Value"
+        otherProp2="otherProp2Value"
+      />);
+
+    it('Should have name if one is passed via props', () => {
+      expect(wrapper.props().otherProp1).toEqual('otherProp1Value');
     });
 
-    it('Should only set type to [button, reset or submit] if one is passed via props', () => {
-      wrapper.setProps({ type: 'button' });
-      expect(wrapper.props().type).toEqual('button');
-      wrapper.setProps({ type: 'submit' });
-      expect(wrapper.props().type).toEqual('submit');
+    it('Should have testProp if one is passed via props', () => {
+      expect(wrapper.props().otherProp2).toEqual('otherProp2Value');
     });
   });
 });

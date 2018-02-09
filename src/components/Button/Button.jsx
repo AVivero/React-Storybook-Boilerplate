@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Button = ({
+  id,
   className,
   children,
   disabled,
@@ -11,6 +12,7 @@ const Button = ({
   ...otherProps
 }) => {
   const buttonProps = {
+    id,
     children,
     disabled,
     type,
@@ -34,6 +36,7 @@ const Button = ({
 };
 
 Button.propTypes = {
+  id: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,

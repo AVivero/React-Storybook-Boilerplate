@@ -5,6 +5,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
 import RadioButton from './RadioButton';
 
 const onChange = (event) => {
+  // eslint-disable-next-line no-console
   console.log(`${event.target.nodeName} changed`);
 };
 
