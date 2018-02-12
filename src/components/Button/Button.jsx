@@ -36,7 +36,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
@@ -50,6 +50,7 @@ Button.defaultProps = {
   className: 'btn',
   disabled: false,
   type: 'button',
+  id: '',
 };
 
 export default Button;

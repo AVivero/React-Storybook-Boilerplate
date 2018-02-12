@@ -11,7 +11,7 @@ const onClick = (event) => {
 
 // Simple Button
 storiesOf('Buttons', module).addDecorator(withKnobs).addWithInfo('Button', () => {
-  const id = text('id', 'buttonId');
+  // const id = text('id', 'buttonId');
   const className = text('className', 'btn-danger');
   const disabled = boolean('Disabled', false);
   const type = text('Type', 'button');
@@ -20,7 +20,7 @@ storiesOf('Buttons', module).addDecorator(withKnobs).addWithInfo('Button', () =>
   return (
     <div>
       <Button
-        id={id}
+        // id={id}
         className={className}
         disabled={disabled}
         type={type}

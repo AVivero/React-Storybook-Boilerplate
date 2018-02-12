@@ -6,9 +6,9 @@ import TextInput from './TextInput';
 
 // Text Input
 storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input', () => {
-  const id = text('Id', 'sampleInputText');
+  // const id = text('Id', 'sampleInputText');
   const placeholder = text('Placeholder', 'placeholder...');
-  const className = text('className', '');
+  const inputClass = text('inputClass', '');
   const invalid = boolean('Invalid', false);
   const disabled = boolean('Disabled', false);
   const type = text('Type', 'text');
@@ -16,12 +16,12 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input', ()
   return (
     <div>
       <TextInput
-        id={id}
+        // id={id}
         placeholder={placeholder}
         onChange={() => {}}
         invalid={invalid}
         disabled={disabled}
-        className={className}
+        inputClass={inputClass}
         type={type}
       />
     </div>);
@@ -31,7 +31,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input', ()
 storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Disabled Text Input', () => {
   const id = text('Id', 'sampleInputText');
   const placeholder = text('Placeholder', 'placeholder...');
-  const className = text('className', '');
+  const inputClass = text('inputClass', '');
   const invalid = boolean('Invalid', false);
   const disabled = boolean('Disabled', true);
   const type = text('Type', 'text');
@@ -44,7 +44,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Disabled Text I
         onChange={() => {}}
         invalid={invalid}
         disabled={disabled}
-        className={className}
+        inputClass={inputClass}
         type={type}
       />
     </div>);
@@ -54,7 +54,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Disabled Text I
 storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ Label', () => {
   const id = text('Id', 'sampleInputText');
   const placeholder = text('Placeholder', 'placeholder...');
-  const className = text('className', '');
+  const inputClass = text('inputClass', '');
   const invalid = boolean('Invalid', false);
   const labelText = text('LabelText', 'Label');
   const disabled = boolean('Disabled', false);
@@ -69,7 +69,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ L
         invalid={invalid}
         labelText={labelText}
         disabled={disabled}
-        className={className}
+        inputClass={inputClass}
         type={type}
       />
     </div>);
@@ -79,7 +79,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ L
 storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ Invalid Value', () => {
   const id = text('Id', 'sampleInputText');
   const placeholder = text('Placeholder', 'placeholder...');
-  const className = text('className', '');
+  const inputClass = text('inputClass', '');
   const invalid = boolean('Invalid', true);
   const helpMessage = text('Error Message', 'Whoops something\'s wrong!');
   const labelText = text('LabelText', 'Label');
@@ -96,7 +96,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
         helpMessage={helpMessage}
         labelText={labelText}
         disabled={disabled}
-        className={className}
+        inputClass={inputClass}
         type={type}
       />
     </div>);
@@ -106,7 +106,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input w/ I
 storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input With Type Password', () => {
   const id = text('Id', 'password');
   const placeholder = text('Placeholder', 'password...');
-  const className = text('className', 'password');
+  const inputClass = text('inputClassName', 'password');
   const invalid = boolean('Invalid', false);
   const helpMessage = text('Error Message', 'Whoops something\'s wrong!');
   const labelText = text('LabelText', 'Password');
@@ -123,7 +123,7 @@ storiesOf('Inputs', module).addDecorator(withKnobs).addWithInfo('Text Input With
         helpMessage={helpMessage}
         labelText={labelText}
         disabled={disabled}
-        className={className}
+        inputClass={inputClass}
         type={type}
       />
     </div>);

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ID from '../../tools/ID';
 
 const TextInput = ({
   labelText,
@@ -86,7 +87,7 @@ const TextInput = ({
 
 TextInput.propTypes = {
   // input id, also used for the errorId and the htmlFor for the label
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   // className for the input
   inputClass: PropTypes.string,
@@ -123,6 +124,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
+  id: `textInput-${ID()}`,
   disabled: false,
   type: 'text',
   invalid: false,

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ID from '../../tools/ID';
 
 const RadioButton = ({
   radioButtonClassName,
@@ -37,7 +38,7 @@ RadioButton.propTypes = {
   labelClassName: PropTypes.string,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   name: PropTypes.string,
   onChange: PropTypes.func,
@@ -45,6 +46,7 @@ RadioButton.propTypes = {
 };
 
 RadioButton.defaultProps = {
+  id: `radioButton-${ID()}`,
   radioButtonClassName: '',
   labelClassName: '',
   defaultChecked: false,

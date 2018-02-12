@@ -17,7 +17,7 @@ storiesOf('RadioButton', module)
     const labelClassName = text('labelClassname', '');
     const disabled = boolean('Disabled', false);
     const defaultChecked = boolean('Default Checked', false);
-    const id = text('Id', 'radio-button');
+    // const id = text('Id', 'radio-button');
     const labelText = text('Label Text', 'Label Text Radio Button');
     const name = text('Name', 'radio button name');
     const value = text('Value', 'value');
@@ -29,7 +29,7 @@ storiesOf('RadioButton', module)
           labelClassName={labelClassName}
           disabled={disabled}
           defaultChecked={defaultChecked}
-          id={id}
+          // id={id}
           labelText={labelText}
           name={name}
           value={value}
