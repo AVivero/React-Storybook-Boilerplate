@@ -43,14 +43,15 @@ http://localhost:9001/
 
 ## Built With
 
-* [Storybook](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [React](https://maven.apache.org/) - Dependency Management
-* [Jest](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Bootstrap](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Storybook](http://www.dropwizard.io/1.0.2/docs/) - Storybook
+* [React](https://maven.apache.org/) - React
+* [Jest](https://rometools.github.io/rome/) - 
+Jest
+* [Bootstrap](https://rometools.github.io/rome/) - Bootstrap
 
 ## Authors
 
-* **Alex Vivero** *
+ **Alex Vivero** 
 
 ## License
 
