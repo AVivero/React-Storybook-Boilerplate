@@ -1,78 +1,56 @@
-<!-- THIS IS JUST A TEMPLATE, IT NEEDS TO BE DEFINED FOR THIS PROJECT -->
+ This Documentation is not the last version...
 
-# em-cmp-quartzs
+# React-Storybook Boilerplate
 
-This library provides multiple types of basic html elements (button, inputs, radio-button, date-picker, spin-button... etc) implemented with React.
+This is a react-storybook boilerplate that gives you the ability to start creating and rendering react components right away.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Install needed dependencies
 
 ```
-Give the example
+npm install .
 ```
+after that you can start creating react components right away.
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+## Running the tests (Jest)
 
 ```
-Give an example
+npm run test
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+### Running Linter (airbnb styling)
 
 ```
-Give an example
+npm run lint
 ```
 
-## Deployment
+## Render Storybook
 
-Add additional notes about how to deploy this on a live system
+```
+npm run storybook
+```
+
+When done the storybook with all the rendered componente will be available at 
+
+```
+http://localhost:9001/
+```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+* [Storybook](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [React](https://maven.apache.org/) - Dependency Management
+* [Jest](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bootstrap](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* -
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Alex Vivero** *
 
 ## License
 
