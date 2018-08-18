@@ -1,7 +1,7 @@
 {
-  "name": "em-cmp-quartzs",
-  "version": "1.0.0",
-  "description": "Basic React Components like buttons, inputs and datePickers to be used on bigger components",
+  "name": "react-storybook-boilerplate",
+  "version": "0.0.1",
+  "description": "Basic react-storybook boilerplate",
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AVivero/em-cmp-quartzs.git"
+    "url": "https://github.com/AVivero/React-Storybook-Boilerplate"
   },
   "author": "",
   "license": "ISC",
@@ -39,7 +39,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.2.1",
     "jest-cli": "^22.2.1",
-    "node-sass": "4.5.2",
+    "node-sass": "^4.9.3",
     "raw-loader": "0.5.1",
     "react": "^16.2.0",
     "react-addons-test-utils": "^0.14.7",
@@ -62,7 +62,6 @@
     "bootstrap": "^4.0.0",
     "bootstrap-sass": "3.3.7",
     "enzyme": "^2.9.1",
-    "jquery": "^3.3.1",
     "popper.js": "^1.13.0",
     "precss": "^3.1.0",
     "prop-types": "15.5.10",
@@ -80,7 +79,7 @@
     "react-virtualized": "9.0.0"
   },
   "bugs": {
-    "url": "https://github.com/AVivero/em-cmp-quartzs/issues"
+    "url": "https://github.com/AVivero/React-Storybook-Boilerplate/issues"
   },
-  "homepage": "https://github.com/AVivero/em-cmp-quartzs#readme"
+  "homepage": "https://github.com/AVivero/React-Storybook-Boilerplate#readme"
 }
